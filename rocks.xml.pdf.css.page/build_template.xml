@@ -195,14 +195,14 @@
 
     <target name="run.antennahouse" if="antennahouse">
         <echo message="[WARN]: You are using Antennahouse. Please notice that Index may not work properly."/>
-        <echo message="[INFO]: The Antenna House command is: ${html.pdf.formatter.path} -d ${xhtml.file} -o ${output.file} -s ${css.file} -x 4" />
+        <echo message="[INFO]: The Antenna House command is: ${html.pdf.formatter.path} -d ${xhtml.file} -o ${output.file} -s ${user.csspath} -x 4" />
 
         <exec executable="${html.pdf.formatter.path}">
             <arg line="-d ${xhtml.file}"/>
             <arg line="-o ${output.file}"/>
             <!-- <arg line="-s ${css.file}"/> -->
             <arg line="-s ${user.csspath}"/>
-            <arg line="-x 4" />
+            <arg line="-x 4"/>
             <dita:extension id="xsl.pdf-css-page.antennahouse.param" behavior="org.dita.dost.platform.InsertAction"/>
         </exec>
     </target>
